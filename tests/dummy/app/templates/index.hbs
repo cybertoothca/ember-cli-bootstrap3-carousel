@@ -1,0 +1,422 @@
+<section class="container">
+  <h1>
+    ember-cli-bootstrap3-carousel
+    <img src="http://badge.fury.io/gh/cybertoothca%2Fember-cli-bootstrap3-carousel.svg"
+         alt="ember-cli-bootstrap3-carousel version">
+    <img src="http://badge.fury.io/js/ember-cli-bootstrap3-carousel.svg" alt="ember-cli-bootstrap3-carousel npm"/>
+  </h1>
+
+  <h2>Examples</h2>
+</section>
+
+<section class="container">
+  <h3>Basic Carousel With Lazy Loaded Images</h3>
+
+  <div class="row">
+    <div class="col-sm-6">
+      {{#twbs-carousel as |carousel|}}
+        {{#carousel.slide classNames="active" as |slide|}}
+          {{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+1" alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+2" alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+3" alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+4" alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+5" alt="A slide image."}}
+        {{/carousel.slide}}
+      {{/twbs-carousel}}
+    </div>
+    <div class="col-sm-6">
+      {{!-- @formatter:off --}}
+<pre>\{{#twbs-carousel as |carousel|}}
+  \{{#carousel.slide classNames="active" as |slide|}}
+    \{{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+1" alt="A slide image."}}
+  \{{/carousel.slide}}
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+2" alt="A slide image."}}
+  \{{/carousel.slide}}
+  ...
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+5" alt="A slide image."}}
+  \{{/carousel.slide}}
+\{{/twbs-carousel}}
+</pre>
+{{!-- @formatter:on --}}
+    </div>
+    <div class="clearfix visible-lg visible-md visible-sm"></div>
+    <div class="col-xs-12">
+      <br/>
+      <div class="alert alert-info">
+        <p>The <em>slide</em> (or item) in the carousel that you want to appear first MUST:</p>
+        <ol>
+          <li>Set the active class; e.g. <code>classNames="active"</code></li>
+          <li>Do not lazy-load the image.</li>
+        </ol>
+        <p>
+          In the example above, the first <code>\{{twbs-carousel/slide}}</code> has its class set to
+          <code>active</code> and the <code>\{{twbs-carousel/slide/img}}</code> is not lazy-loaded.
+        </p>
+      </div>
+    </div>
+  </div>
+  <hr/>
+</section>
+
+<section class="container">
+  <h3>Another Basic Carousel Starting On The Third Slide</h3>
+
+  <div class="row">
+    <div class="col-sm-6">
+      {{#twbs-carousel as |carousel|}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+1" alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+2" alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide classNames="active" as |slide|}}
+          {{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+3" alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+4" alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+5" alt="A slide image."}}
+        {{/carousel.slide}}
+      {{/twbs-carousel}}
+    </div>
+    <div class="col-sm-6">
+      {{!-- @formatter:off --}}
+<pre>\{{#twbs-carousel as |carousel|}}
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+1" alt="A slide image."}}
+  \{{/carousel.slide}}
+  ...
+  \{{#carousel.slide classNames="active" as |slide|}}
+    \{{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+3" alt="A slide image."}}
+  \{{/carousel.slide}}
+  ...
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+5" alt="A slide image."}}
+  \{{/carousel.slide}}
+\{{/twbs-carousel}}
+</pre>
+{{!-- @formatter:on --}}
+    </div>
+  </div>
+  <hr/>
+</section>
+
+<section class="container">
+  <h3>Sliding Carousel With Lazy Loaded Images</h3>
+
+  <div class="row">
+    <div class="col-sm-6">
+      {{#twbs-carousel classNames="slide" as |carousel|}}
+        {{#carousel.slide classNames="active" as |slide|}}
+          {{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Animation+1" alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Animation+2"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Animation+3"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Animation+4"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Animation+5"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+      {{/twbs-carousel}}
+    </div>
+    <div class="col-sm-6">
+      {{!-- @formatter:off --}}
+<pre>\{{#twbs-carousel classNames="slide" as |carousel|}}
+  \{{#carousel.slide classNames="active" as |slide|}}
+    \{{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Animation+1" alt="A slide image."}}
+  \{{/carousel.slide}}
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Animation+2" alt="A slide image."}}
+  \{{/carousel.slide}}
+  ...
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Animation+5" alt="A slide image."}}
+  \{{/carousel.slide}}
+\{{/twbs-carousel}}
+</pre>
+{{!-- @formatter:on --}}
+    </div>
+    <div class="clearfix visible-lg visible-md visible-sm"></div>
+    <div class="col-xs-12">
+      <br/>
+      <div class="alert alert-info">
+        <p>
+          To configure a a carousel that uses a slide animation to transition between slides, simply supply
+          the <code>classNames="slide"</code> class to the <code>\{{twbs-carousel}}</code> component.
+        </p>
+      </div>
+    </div>
+  </div>
+  <hr/>
+</section>
+
+<section class="container">
+  <h2>Other Carousel Options</h2>
+
+  <div class="alert alert-info">
+    <p>Refer to the Bootstrap3 latest Carousel documentation to better understand these options.</p>
+    <p><a href="http://getbootstrap.com/javascript/#carousel-options">Bootstrap3 Carousel Options</a></p>
+  </div>
+</section>
+
+<section class="container">
+  <h3><code>interval=5000</code> (DEFAULT)</h3>
+
+  <div class="row">
+    <div class="col-sm-6">
+      {{#twbs-carousel classNames="slide" interval=5000 as |carousel|}}
+        {{#carousel.slide classNames="active" as |slide|}}
+          {{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+1" alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+2"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+3"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+4"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+5"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+      {{/twbs-carousel}}
+    </div>
+    <div class="col-sm-6">
+      {{!-- @formatter:off --}}
+<pre>\{{#twbs-carousel classNames="slide" interval=5000 as |carousel|}}
+  \{{#carousel.slide classNames="active" as |slide|}}
+    \{{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+1" alt="A slide image."}}
+  \{{/carousel.slide}}
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+2" alt="A slide image."}}
+  \{{/carousel.slide}}
+  ...
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+5" alt="A slide image."}}
+  \{{/carousel.slide}}
+\{{/twbs-carousel}}
+</pre>
+{{!-- @formatter:on --}}
+    </div>
+  </div>
+  <hr/>
+</section>
+
+<section class="container">
+  <h3><code>interval=false</code></h3>
+
+  <div class="row">
+    <div class="col-sm-6">
+      {{#twbs-carousel classNames="slide" interval=false as |carousel|}}
+        {{#carousel.slide classNames="active" as |slide|}}
+          {{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+6" alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+7"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+8"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+9"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+10"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+      {{/twbs-carousel}}
+    </div>
+    <div class="col-sm-6">
+      {{!-- @formatter:off --}}
+<pre>\{{#twbs-carousel classNames="slide" interval=false as |carousel|}}
+  \{{#carousel.slide classNames="active" as |slide|}}
+    \{{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+6" alt="A slide image."}}
+  \{{/carousel.slide}}
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+7" alt="A slide image."}}
+  \{{/carousel.slide}}
+  ...
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Interval+10" alt="A slide image."}}
+  \{{/carousel.slide}}
+\{{/twbs-carousel}}
+</pre>
+{{!-- @formatter:on --}}
+    </div>
+  </div>
+  <hr/>
+</section>
+
+<section class="container">
+  <h3><code>keyboard?=false</code></h3>
+
+  <div class="row">
+    <div class="col-sm-6">
+      {{#twbs-carousel classNames="slide" keyboard?=false as |carousel|}}
+        {{#carousel.slide classNames="active" as |slide|}}
+          {{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Keyboard+1" alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Keyboard+2"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Keyboard+3"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Keyboard+4"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Keyboard+5"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+      {{/twbs-carousel}}
+    </div>
+    <div class="col-sm-6">
+      {{!-- @formatter:off --}}
+<pre>\{{#twbs-carousel classNames="slide" keyboard?=false as |carousel|}}
+  \{{#carousel.slide classNames="active" as |slide|}}
+    \{{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Keyboard+1" alt="A slide image."}}
+  \{{/carousel.slide}}
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Keyboard+2" alt="A slide image."}}
+  \{{/carousel.slide}}
+  ...
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Keyboard+5" alt="A slide image."}}
+  \{{/carousel.slide}}
+\{{/twbs-carousel}}
+</pre>
+{{!-- @formatter:on --}}
+    </div>
+  </div>
+  <hr/>
+</section>
+
+<section class="container">
+  <h3><code>pause="hover"</code></h3>
+
+  <div class="row">
+    <div class="col-sm-6">
+      {{#twbs-carousel classNames="slide" interval=500 pause="hover" as |carousel|}}
+        {{#carousel.slide classNames="active" as |slide|}}
+          {{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Pause+Hover+1"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Pause+Hover+2"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Pause+Hover+3"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Pause+Hover+4"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Pause+Hover+5"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+      {{/twbs-carousel}}
+    </div>
+    <div class="col-sm-6">
+      {{!-- @formatter:off --}}
+<pre>\{{#twbs-carousel classNames="slide" interval=500 pause="hover" as |carousel|}}
+  \{{#carousel.slide classNames="active" as |slide|}}
+    \{{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Pause+Hover+1" alt="A slide image."}}
+  \{{/carousel.slide}}
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Pause+Hover+2" alt="A slide image."}}
+  \{{/carousel.slide}}
+  ...
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Pause+Hover+5" alt="A slide image."}}
+  \{{/carousel.slide}}
+\{{/twbs-carousel}}
+</pre>
+{{!-- @formatter:on --}}
+    </div>
+  </div>
+  <hr/>
+</section>
+
+<section class="container">
+  <h3><code>wrap?=false</code></h3>
+
+  <div class="row">
+    <div class="col-sm-6">
+      {{#twbs-carousel classNames="slide" wrap?=false as |carousel|}}
+        {{#carousel.slide classNames="active" as |slide|}}
+          {{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+No+Wrap+1" alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+No+Wrap+2"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+No+Wrap+3"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+No+Wrap+4"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+        {{#carousel.slide as |slide|}}
+          {{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+No+Wrap+5"
+                      alt="A slide image."}}
+        {{/carousel.slide}}
+      {{/twbs-carousel}}
+    </div>
+    <div class="col-sm-6">
+      {{!-- @formatter:off --}}
+<pre>\{{#twbs-carousel classNames="slide" wrap?=false as |carousel|}}
+  \{{#carousel.slide classNames="active" as |slide|}}
+    \{{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+No+Wrap+1" alt="A slide image."}}
+  \{{/carousel.slide}}
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+No+Wrap+2" alt="A slide image."}}
+  \{{/carousel.slide}}
+  ...
+  \{{#carousel.slide as |slide|}}
+    \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+No+Wrap+5" alt="A slide image."}}
+  \{{/carousel.slide}}
+\{{/twbs-carousel}}
+</pre>
+{{!-- @formatter:on --}}
+    </div>
+  </div>
+  <hr/>
+</section>

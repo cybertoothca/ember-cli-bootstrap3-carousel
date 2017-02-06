@@ -1,0 +1,26 @@
+//noinspection CssUnknownTarget
+@import 'ember-cli-bootstrap3-variables.scss';
+
+// TODO: can't @import fonts because PhantomJS get's angry
+$font-family-serif: lato, $font-family-serif;
+$headings-font-family: Raleway, $font-family-base;
+$navbar-default-bg: lighten($brand-warning, 10%);
+$navbar-default-link-hover-bg: lighten($brand-warning, 7%);
+$navbar-default-link-active-bg: lighten($brand-warning, 3%);
+
+//noinspection CssUnknownTarget
+@import 'ember-cli-bootstrap3-sass';
+//noinspection CssUnknownTarget
+@import 'ember-cli-bootstrap3-theme';
+
+//noinspection CssUnknownTarget
+@import "ember-cli-font-awesome-sass";
+
+body {
+  padding-top: 70px;
+  margin-bottom: 50%;
+}
+
+h3 {
+  margin-top: 3rem;
+}
