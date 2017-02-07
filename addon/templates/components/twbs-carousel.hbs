@@ -1,8 +1,15 @@
+{{#if indicators?}}
+  <ol class="carousel-indicators">
+    {{#each slides as |slide index|}}
+      {{twbs-carousel/-indicator-li slideComponent=slide data-target=(concat "#" elementId) data-slide-to=index}}
+    {{/each}}
+  </ol>
+{{/if}}
+
 <div class="carousel-inner" role="listbox">
-  {{yield
-    (hash slide=(component "twbs-carousel/slide" register=(action "registerSlideComponent")))
-  }}
+  {{yield (hash slide=(component "twbs-carousel/slide" register=(action "registerSlideComponent")))}}
 </div>
+
 <a class="left carousel-control" href="#{{elementId}}" role="button" data-slide="prev">
   <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
   <span class="sr-only">Previous</span>

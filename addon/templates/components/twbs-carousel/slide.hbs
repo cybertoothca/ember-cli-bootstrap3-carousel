@@ -1,1 +1,6 @@
-{{yield (hash img=(component "twbs-carousel/slide/img" register=(action "registerImgComponent")))}}
+{{yield
+  (hash
+    img=(component "twbs-carousel/slide/img" register=(action "registerImgComponent"))
+    caption=(component "twbs-carousel/slide/caption")
+  )
+}}

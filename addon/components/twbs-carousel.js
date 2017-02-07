@@ -13,11 +13,17 @@ export default Ember.Component.extend(Carousel, {
    * Add the slide class?
    */
   classNames: ['carousel'],
+  /**
+   * @default `false`
+   * @return boolean `true` if you want the carousel indicators to appear; `false` otherwise.
+   */
+  'indicators?': false,
   init() {
     this._super(...arguments);
     this.set('_slides', Ember.A());
   },
   layout,
+  slides: Ember.computed.readOnly('_slides.[]'),
   tagName: 'div',
   _initializeCarousel: Ember.on('didInsertElement', function () {
     this.$()

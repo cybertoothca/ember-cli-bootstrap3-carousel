@@ -14,6 +14,9 @@ export default Ember.Component.extend({
       return true;
     }
   },
+  'active?': Ember.computed('classNames.[]', function() {
+    return this.$().hasClass('active');
+  }),
   classNames: ['twbs-carousel-slide', 'item'],
   layout,
   /**
