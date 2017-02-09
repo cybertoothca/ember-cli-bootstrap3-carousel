@@ -254,27 +254,20 @@
 <pre>\{{#twbs-carousel classNames="slide" as |carousel|}}
   \{{#carousel.slide classNames="active" as |slide|}}
     \{{slide.img src="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Animation+1" alt="A slide image."}}
+    \{{#slide.caption}}Caption Number One\{{/slide.caption}}
   \{{/carousel.slide}}
   \{{#carousel.slide as |slide|}}
     \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Animation+2" alt="A slide image."}}
+    \{{#slide.caption}}Caption Number Two\{{/slide.caption}}
   \{{/carousel.slide}}
   ...
   \{{#carousel.slide as |slide|}}
     \{{slide.img lazy="https://dummyimage.com/1600x900/f7d3a0/333.jpg&text=Slide+Animation+5" alt="A slide image."}}
+    \{{#slide.caption}}Caption Number Five\{{/slide.caption}}
   \{{/carousel.slide}}
 \{{/twbs-carousel}}
 </pre>
 {{!-- @formatter:on --}}
-    </div>
-    <div class="clearfix visible-lg visible-md visible-sm"></div>
-    <div class="col-xs-12">
-      <br/>
-      <div class="alert alert-info">
-        <p>
-          To configure a a carousel that uses a slide animation to transition between slides, simply supply
-          the <code>classNames="slide"</code> class to the <code>\{{twbs-carousel}}</code> component.
-        </p>
-      </div>
     </div>
   </div>
   <hr/>
